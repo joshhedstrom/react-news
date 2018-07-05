@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Main.css';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -35,42 +34,7 @@ class Main extends Component {
               </Toolbar>
             </AppBar>
           </Grid>
-          <form>
-            <Grid item xs={12}>
-              <TextField
-                id="full-width"
-                label="Topic Search"
-                InputLabelProps={{
-                  shrink: true
-                }}
-                placeholder="Search for an article"
-                fullWidth
-                margin="normal"
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                id="date"
-                label="Start Date"
-                type="date"
-                defaultValue="2000-01-01"
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                id="date"
-                label="End Date"
-                type="date"
-                defaultValue="2018-01-01"
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-            </Grid>
-          </form>
+          
         </Grid>
       </div>
     );
