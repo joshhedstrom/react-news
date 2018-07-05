@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './Main.css';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Form from '../../components/Form';
+import Header from '../../components/Header';
 
 const styles = theme => ({
   root: {
@@ -15,22 +12,20 @@ const styles = theme => ({
 });
 
 class Main extends Component {
-  state = {};
+  state = {}
 
   componentDidMount() {}
 
-  loadArticles = () => {};
+  loadArticles = () => {}
 
   render() {
     return (
-      <div className={root}>
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
-          </Grid>
-        </Grid>
+      <div>
+        <Header/>
+        <Form/>
       </div>
     );
   }
 }
 
-export default withStyles(styles)(Main);
+export default Main;
