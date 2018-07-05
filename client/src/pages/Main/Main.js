@@ -12,17 +12,36 @@ const styles = theme => ({
 });
 
 class Main extends Component {
-  state = {}
+  state = {
+    query: {
+      topic: '',
+      startDate: '',
+      endDate: ''
+    }
 
-  componentDidMount() {}
+  }
 
-  loadArticles = () => {}
+  componentDidMount() {
+
+  }
+
+  handleOnClick = event => {
+    event.preventDefault()
+    console.log(event)
+
+  }
+
+  loadArticles = () => {
+
+  }
 
   render() {
     return (
       <div>
         <Header/>
-        <Form/>
+        <Form
+        action={this.handleOnClick.bind()}
+        />
       </div>
     );
   }

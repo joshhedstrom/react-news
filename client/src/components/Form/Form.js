@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    align: 'center',
   },
   button: {
     margin: theme.spacing.unit
@@ -22,7 +23,7 @@ function Form(props) {
       <Grid container spacing={24}>
         <Grid item xs={12}>
           <TextField
-            id="full-width"
+            id="topic"
             label="Topic Search"
             InputLabelProps={{
               shrink: true
@@ -34,7 +35,7 @@ function Form(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            id="date"
+            id="startDate"
             label="Start Date"
             type="date"
             defaultValue="2000-01-01"
@@ -46,7 +47,7 @@ function Form(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            id="date"
+            id="endDate"
             label="End Date"
             type="date"
             defaultValue="2018-01-01"
@@ -57,7 +58,7 @@ function Form(props) {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button size="large" variant='outlined' color='primary' className={classes.button}>
+          <Button size="large" variant='outlined' color='primary' className={classes.button} onClick={props.action}>
             Submit
           </Button>
         </Grid>
