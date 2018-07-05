@@ -26,15 +26,7 @@ class Main extends Component {
       <div className={root}>
         <Grid container spacing={24}>
           <Grid item xs={12}>
-            <AppBar position="static" color="default">
-              <Toolbar>
-                <Typography variant="title" color="inherit">
-                  New York Times Article Search
-                </Typography>
-              </Toolbar>
-            </AppBar>
           </Grid>
-          
         </Grid>
       </div>
     );
