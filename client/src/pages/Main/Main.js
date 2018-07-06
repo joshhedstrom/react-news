@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Main.css';
+import API from '../../utils/API';
 import Form from '../../components/Form';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -10,29 +11,36 @@ class Main extends Component {
       topic: '',
       startDate: '',
       endDate: ''
-    }
+    },
+    articleResults: [],
+    savedArticles: []
   }
 
   componentDidMount() {}
 
-  handleOnClick = event => {
+  handleOnSubmit = event => {
     event.preventDefault();
-    console.log(event);
-    console.log(this);
+    this.loadArticles();
   }
-
+  
   handleInputChange = event => {
-    this.setState({query: {[event.target.id]: event.target.value }});
+    this.setState({ query: { [event.target.id]: event.target.value } })
   }
-
-  loadArticles = () => {}
+  
+  loadArticles = () => {
+    API.getArticles(this.state.query)
+      .then(res => {
+        this.setState({ results: res.data.message });
+      })
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (
       <div>
         <Header />
         <Form
-          submitAction={this.handleOnClick.bind()}
+          submitAction={this.handleOnSubmit.bind()}
           endAction={this.handleInputChange.bind()}
           startAction={this.handleInputChange.bind()}
           topicAction={this.handleInputChange.bind()}
