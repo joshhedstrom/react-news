@@ -39,7 +39,6 @@ function Form(props) {
             id="startDate"
             label="Start Date"
             type="date"
-            defaultValue="2000-01-01"
             fullWidth
             InputLabelProps={{
               shrink: true
@@ -52,7 +51,6 @@ function Form(props) {
             id="endDate"
             label="End Date"
             type="date"
-            defaultValue="2018-01-01"
             fullWidth
             InputLabelProps={{
               shrink: true

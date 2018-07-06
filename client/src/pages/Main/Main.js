@@ -7,11 +7,9 @@ import Footer from '../../components/Footer';
 
 class Main extends Component {
   state = {
-    query: {
-      topic: '',
-      startDate: '',
-      endDate: ''
-    },
+    topic: '',
+    startDate: '',
+    endDate: '',
     articleResults: [],
     savedArticles: []
   }
@@ -23,14 +21,16 @@ class Main extends Component {
     this.loadArticles();
   }
   
-  handleInputChange = event => {
-    this.setState({ query: { [event.target.id]: event.target.value } })
+  handleInputChange = event => {    
+    this.setState({[event.target.id]: event.target.value})
   }
   
   loadArticles = () => {
-    API.getArticles(this.state.query)
+    console.log(this.state)
+    API.getArticles(this.state.topic, this.state.startDate, this.state.endDate)
       .then(res => {
         this.setState({ results: res.data.message });
+        console.log('Results::::>>> ', res.data.message)
       })
       .catch(err => console.log(err));
   }
