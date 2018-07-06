@@ -10,29 +10,27 @@ class Main extends Component {
       startDate: '',
       endDate: ''
     }
+  };
 
-  }
-
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   handleOnClick = event => {
-    event.preventDefault()
-    console.log(event)
+    event.preventDefault();
+    console.log(event);
+    console.log(this);
+  };
 
-  }
-
-  loadArticles = () => {
-
-  }
+  loadArticles = () => {};
 
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <Form
-        action={this.handleOnClick.bind()}
+          submitAction={this.handleOnClick.bind()}
+          endAction={this.handleInputChange.bind()}
+          startAction={this.handleInputChange.bind()}
+          topicAction={this.handleInputChange.bind()}
         />
       </div>
     );
