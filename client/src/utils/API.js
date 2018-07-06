@@ -2,15 +2,23 @@ import axios from 'axios';
 
 export default {
   getArticles: (topic, beginDate, endDate) => {
-    beginDate.split('-').join('');
-    endDate.split('-').join('');
+    if (!beginDate) {
+      beginDate = '';
+    } else {
+      beginDate.split('-').join('');
+      beginDate = `&begin_date=${beginDate}`;
+    }
+    if (!endDate) {
+      endDate = '';
+    } else {
+      endDate.split('-').join('');
+      endDate = `&end_date=${endDate}`;
+    }
 
     return axios.get(
       'https://api.nytimes.com/svc/search/v2/articlesearch.json?apikey=5423effdca6f40f18ce47a8ba829b027&q=' +
         topic +
-        '&begin_date=' +
         beginDate +
-        '&end_date=' +
         endDate +
         '&sort=newest'
     );

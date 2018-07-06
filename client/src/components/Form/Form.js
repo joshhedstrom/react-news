@@ -37,7 +37,7 @@ function Form(props) {
         <Grid item xs={12} sm={6}>
           <TextField
             id="startDate"
-            label="Start Date"
+            label="Start Date (optional)"
             type="date"
             fullWidth
             InputLabelProps={{
@@ -49,7 +49,7 @@ function Form(props) {
         <Grid item xs={12} sm={6}>
           <TextField
             id="endDate"
-            label="End Date"
+            label="End Date (optional)"
             type="date"
             fullWidth
             InputLabelProps={{

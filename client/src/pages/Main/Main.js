@@ -24,12 +24,17 @@ class Main extends Component {
   handleInputChange = event => {    
     this.setState({[event.target.id]: event.target.value})
   }
+
+  resetData = () => {
+    this.setState({topic: '', startDate: '', endDate: ''})
+  }
   
   loadArticles = () => {
     console.log(this.state)
     API.getArticles(this.state.topic, this.state.startDate, this.state.endDate)
       .then(res => {
         this.setState({ results: res.data.response.docs });
+        this.resetData();
       })
       .catch(err => console.log(err));
   }
