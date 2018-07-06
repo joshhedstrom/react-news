@@ -4,6 +4,7 @@ import API from '../../utils/API';
 import Form from '../../components/Form';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ArticleContainer from '../../components/ArticleContainer';
 
 class Main extends Component {
   state = {
@@ -14,7 +15,9 @@ class Main extends Component {
     savedArticles: []
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.loadArticles();
+  }
 
   handleOnSubmit = event => {
     event.preventDefault();
@@ -50,6 +53,7 @@ class Main extends Component {
           topicAction={this.handleInputChange.bind()}
         />
         <Footer />
+        <ArticleContainer results={this.state.articleResults}/>
       </div>
     );
   }
