@@ -20,7 +20,7 @@ function Form(props) {
 
   return (
     <div className={classes.root}>
-`      <Grid container spacing={24}>
+      <Grid container spacing={24}>
         <Grid item xs={12}>
           <TextField
             id="topic"

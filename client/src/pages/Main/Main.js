@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Main.css';
 import Form from '../../components/Form';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 class Main extends Component {
   state = {
@@ -10,7 +11,7 @@ class Main extends Component {
       startDate: '',
       endDate: ''
     }
-  };
+  }
 
   componentDidMount() {}
 
@@ -18,13 +19,13 @@ class Main extends Component {
     event.preventDefault();
     console.log(event);
     console.log(this);
-  };
+  }
 
   handleInputChange = event => {
     this.setState({query: {[event.target.id]: event.target.value }});
-  };
+  }
 
-  loadArticles = () => {};
+  loadArticles = () => {}
 
   render() {
     return (
@@ -36,6 +37,7 @@ class Main extends Component {
           startAction={this.handleInputChange.bind()}
           topicAction={this.handleInputChange.bind()}
         />
+        <Footer />
       </div>
     );
   }
