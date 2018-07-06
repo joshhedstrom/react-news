@@ -15,7 +15,7 @@ class Main extends Component {
     savedArticles: []
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.loadArticles();
   }
 
