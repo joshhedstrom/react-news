@@ -20,6 +20,10 @@ class Main extends Component {
     console.log(this);
   };
 
+  handleInputChange = event => {
+    this.setState({query: {[event.target.id]: event.target.value }});
+  };
+
   loadArticles = () => {};
 
   render() {

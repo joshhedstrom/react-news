@@ -20,55 +20,58 @@ function Form(props) {
 
   return (
     <div className={classes.root}>
-      <form action="">
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
-            <TextField
-              id="topic"
-              label="Topic Search"
-              InputLabelProps={{
-                shrink: true
-              }}
-              placeholder="Search for an article"
-              fullWidth
-              margin="normal"
-              onChange={props.topicAction}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              id="startDate"
-              label="Start Date"
-              type="date"
-              defaultValue="2000-01-01"
-              fullWidth
-              InputLabelProps={{
-                shrink: true
-              }}
-              onChange={props.startAction}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              id="endDate"
-              label="End Date"
-              type="date"
-              defaultValue="2018-01-01"
-              fullWidth
-              InputLabelProps={{
-                shrink: true
-              }}
-              onChange={props.endAction}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            {/* <Button size="large" variant='outlined' color='primary' className={classes.button} onClick={props.action}>
-            Submit
-          </Button> */}
-            <input type="submit" value="Submit" onClick={props.submitAction} />
-          </Grid>
+`      <Grid container spacing={24}>
+        <Grid item xs={12}>
+          <TextField
+            id="topic"
+            label="Topic Search"
+            InputLabelProps={{
+              shrink: true
+            }}
+            placeholder="Search for an article"
+            fullWidth
+            margin="normal"
+            onChange={props.topicAction}
+          />
         </Grid>
-      </form>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="startDate"
+            label="Start Date"
+            type="date"
+            defaultValue="2000-01-01"
+            fullWidth
+            InputLabelProps={{
+              shrink: true
+            }}
+            onChange={props.startAction}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="endDate"
+            label="End Date"
+            type="date"
+            defaultValue="2018-01-01"
+            fullWidth
+            InputLabelProps={{
+              shrink: true
+            }}
+            onChange={props.endAction}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Button
+            size="large"
+            variant="outlined"
+            color="primary"
+            className={classes.button}
+            onClick={props.submitAction}
+          >
+            Submit
+          </Button>
+        </Grid>
+      </Grid>
     </div>
   );
 }
