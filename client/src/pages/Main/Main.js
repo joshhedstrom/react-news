@@ -29,8 +29,7 @@ class Main extends Component {
     console.log(this.state)
     API.getArticles(this.state.topic, this.state.startDate, this.state.endDate)
       .then(res => {
-        this.setState({ results: res.data.message });
-        console.log('Results::::>>> ', res.data.message)
+        this.setState({ results: res.data.response.docs });
       })
       .catch(err => console.log(err));
   }
