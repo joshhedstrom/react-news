@@ -1,15 +1,13 @@
 import React from 'react';
 
-const ArticleContainer = props => (
-      props.results.map(result => (
-        <div key={result} className="list-group-item">
-        <h4>{result.headline}</h4>
-        <p>{result.multimedia.snippet}</p>
-        <p>{result.multimedia.date}</p>
-        <a href={result.multimedia.web_url}>Article Link</a>
-      </div>
-    )) 
-)
-
-
+const ArticleContainer = props => {
+  return props.results.map(result => (
+    <div key={result.id}>
+      <h4 href={result.multimedia.web_url}>{result.headline.main}</h4>
+      <p>{result.snippet}</p>
+      <p>{result.date}</p>
+      <a >Link</a>
+    </div>
+  ));
+};
 export default ArticleContainer;

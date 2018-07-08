@@ -11,7 +11,7 @@ class Main extends Component {
     topic: '',
     startDate: '',
     endDate: '',
-    articleResults: [],
+    results: [],
     savedArticles: []
   }
 
@@ -52,8 +52,8 @@ class Main extends Component {
           startAction={this.handleInputChange.bind()}
           topicAction={this.handleInputChange.bind()}
         />
+        <ArticleContainer results={this.state.results}/>
         <Footer />
-        <ArticleContainer results={this.state.articleResults}/>
       </div>
     );
   }
