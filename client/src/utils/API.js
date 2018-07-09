@@ -22,5 +22,17 @@ export default {
         endDate +
         '&sort=newest'
     );
-  }
+  },
+
+  getSavedArticles: () => {
+
+  },
+
+  saveArticle: (id) => {
+
+  },
+
+  deleteArticle: (id) => {
+
+  },
 };

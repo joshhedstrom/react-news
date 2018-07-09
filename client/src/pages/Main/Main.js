@@ -16,7 +16,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
-    this.loadArticles();
+    // this.loadAr  ticles();
   }
 
   handleOnSubmit = event => {
@@ -42,6 +42,14 @@ class Main extends Component {
       .catch(err => console.log(err));
   }
 
+  saveArticle = id => {
+
+  }
+
+  deleteArticle = id => {
+
+  }
+
   render() {
     return (
       <div>
@@ -52,7 +60,11 @@ class Main extends Component {
           startAction={this.handleInputChange.bind()}
           topicAction={this.handleInputChange.bind()}
         />
-        <ArticleContainer results={this.state.results}/>
+        <ArticleContainer 
+        results={this.state.results}
+        saveArticle={this.saveArticle.bind()}
+        deleteArticle={this.deleteArticle.bind()}
+        />
         <Footer />
       </div>
     );
