@@ -43,7 +43,7 @@ class Main extends Component {
 
   saveArticle = event => {
     let id = event.target.id
-    API.savesArticle(id)
+    API.saveArticle(id)
        .then(res => console.log('THE RES ', res))
        .catch(err => console.log(err))
     
@@ -52,7 +52,7 @@ class Main extends Component {
 
   deleteArticle = event => {
     let id = event.target.id
-    API.deletesArticle(id)
+    API.deleteArticle(id)
       .then(res => console.log('THE RES ', res))
       .catch(err => console.log(err))
   }

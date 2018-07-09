@@ -27,11 +27,12 @@ export default {
   getSavedArticles: () => {
   },
 
-  savesArticle: id => {
-    return console.log(id)
+  saveArticle: id => {
+    return axios.post('/', id);
   },
 
-  deletesArticle: id => {
-    return console.log(id)
+  deleteArticle: id => {
+    let thisId = {id: id}
+    return axios.delete('/', thisId);
   },
 };
