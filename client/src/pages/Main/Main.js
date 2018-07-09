@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Main.css';
-import API from '../../utils/API';
 import Form from '../../components/Form';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import API from '../../utils/API';
 import ArticleContainer from '../../components/ArticleContainer';
 
 class Main extends Component {
@@ -33,7 +33,6 @@ class Main extends Component {
   }
   
   loadArticles = () => {
-    console.log(this.state)
     API.getArticles(this.state.topic, this.state.startDate, this.state.endDate)
       .then(res => {
         this.setState({ results: res.data.response.docs });
@@ -43,14 +42,19 @@ class Main extends Component {
   }
 
   saveArticle = event => {
-    console.log('saved')
-    console.log(event.target);
+    let id = event.target.id
+    API.savesArticle(id)
+       .then(res => console.log('THE RES ', res))
+       .catch(err => console.log(err))
     
 
   }
 
-  deleteArticle = id => {
-
+  deleteArticle = event => {
+    let id = event.target.id
+    API.deletesArticle(id)
+      .then(res => console.log('THE RES ', res))
+      .catch(err => console.log(err))
   }
 
   render() {

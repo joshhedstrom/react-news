@@ -25,14 +25,13 @@ export default {
   },
 
   getSavedArticles: () => {
-
   },
 
-  saveArticle: (id) => {
-
+  saveArticles: (id) => {
+    console.log(id)
   },
 
-  deleteArticle: (id) => {
-
+  deleteArticles: (id) => {
+    console.log(id)
   },
 };
