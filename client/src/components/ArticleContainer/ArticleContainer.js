@@ -6,8 +6,8 @@ const ArticleContainer = props => {
       <h4 href={result.multimedia.web_url}>{result.headline.main}</h4>
       <p>{result.snippet}</p>
       <p>{result.date}</p>
-      <button onClick={props.saveArticle} >Save</button>
-      <button onClick={props.deleteArticle}>Delete</button>
+      <button id={result.id} onClick={props.saveArticle} >Save</button>
+      <button id={result.id} onClick={props.deleteArticle}>Delete</button>
     </div>
   ));
 };

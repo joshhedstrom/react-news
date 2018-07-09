@@ -42,7 +42,10 @@ class Main extends Component {
       .catch(err => console.log(err));
   }
 
-  saveArticle = id => {
+  saveArticle = event => {
+    console.log('saved')
+    console.log(event.target);
+    
 
   }
 
