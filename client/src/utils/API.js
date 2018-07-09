@@ -27,11 +27,11 @@ export default {
   getSavedArticles: () => {
   },
 
-  saveArticles: (id) => {
+  savesArticle: id => {
     console.log(id)
   },
 
-  deleteArticles: (id) => {
+  deletesArticle: id => {
     console.log(id)
   },
 };

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './Main.css';
-import Form from '../../components/Form';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import API from '../../utils/API';
+import Header from '../../components/Header';
+import Form from '../../components/Form';
 import ArticleContainer from '../../components/ArticleContainer';
+import Footer from '../../components/Footer';
+import './Main.css';
 
 class Main extends Component {
   state = {
@@ -12,11 +12,11 @@ class Main extends Component {
     startDate: '',
     endDate: '',
     results: [],
-    savedArticles: []
+    savedArticles: [] 
   }
 
   componentWillMount() {
-    // this.loadAr  ticles();
+    // this.loadArticles();
   }
 
   handleOnSubmit = event => {
