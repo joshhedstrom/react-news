@@ -28,10 +28,10 @@ export default {
   },
 
   savesArticle: id => {
-    console.log(id)
+    return console.log(id)
   },
 
   deletesArticle: id => {
-    console.log(id)
+    return console.log(id)
   },
 };
