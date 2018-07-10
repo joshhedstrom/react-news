@@ -42,10 +42,18 @@ class Main extends Component {
   }
 
   saveArticle = event => {
-    let id = event.target.id
-    API.saveArticle(id)
-       .then(res => console.log('THE RES ', res))
-       .catch(err => console.log(err))
+    let article = {
+      title: event.target.title,
+      date: event.target.date,
+      url: event.target.url
+    }
+    console.log(article)
+
+    // let id = event.target.id
+
+    API.saveArticle(article)
+       .then(res => console.log('RES ', res))
+       .catch(err => console.log('ERROR ', err))
     
 
   }
@@ -53,8 +61,8 @@ class Main extends Component {
   deleteArticle = event => {
     let id = event.target.id
     API.deleteArticle(id)
-      .then(res => console.log('THE RES ', res))
-      .catch(err => console.log(err))
+      .then(res => console.log('RES ', res))
+      .catch(err => console.log('ERROR ', err));
   }
 
   render() {

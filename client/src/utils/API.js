@@ -25,14 +25,14 @@ export default {
   },
 
   getSavedArticles: () => {
+    return axios.get('/api')
   },
 
-  saveArticle: id => {
-    return axios.post('/', id);
+  saveArticle: article => {
+    return axios.post('/api', article);
   },
 
   deleteArticle: id => {
-    let thisId = {id: id}
-    return axios.delete('/', thisId);
+    return axios.delete('/api/' + id);
   },
 };
