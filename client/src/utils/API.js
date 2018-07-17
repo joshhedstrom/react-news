@@ -29,10 +29,10 @@ export default {
   },
 
   saveArticle: article => {
-    return axios.post('/api', article);
+    return axios.post('/api/articles', article);
   },
 
   deleteArticle: id => {
-    return axios.delete('/api/' + id);
+    return axios.delete('/api/articles' + id);
   },
 };

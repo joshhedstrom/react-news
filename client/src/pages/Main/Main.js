@@ -52,7 +52,9 @@ class Main extends Component {
     // let id = event.target.id
 
     API.saveArticle(article)
-       .then(res => console.log('RES ', res))
+       .then(res => {if(res){
+         console.log('Article Saved!')
+       }})
        .catch(err => console.log('ERROR ', err))
     
 
