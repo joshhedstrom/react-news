@@ -12,8 +12,8 @@ class Main extends Component {
     startDate: '',
     endDate: '',
     results: [],
-    savedArticles: [] 
-  }
+    savedArticles: []
+  };
 
   componentWillMount() {
     // this.loadArticles();
@@ -22,16 +22,16 @@ class Main extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.loadArticles();
-  }
-  
-  handleInputChange = event => {    
-    this.setState({[event.target.id]: event.target.value})
-  }
+  };
+
+  handleInputChange = event => {
+    this.setState({ [event.target.id]: event.target.value });
+  };
 
   resetData = () => {
-    this.setState({topic: '', startDate: '', endDate: ''})
-  }
-  
+    this.setState({ topic: '', startDate: '', endDate: '' });
+  };
+
   loadArticles = () => {
     API.getArticles(this.state.topic, this.state.startDate, this.state.endDate)
       .then(res => {
@@ -39,33 +39,34 @@ class Main extends Component {
         this.resetData();
       })
       .catch(err => console.log(err));
-  }
+  };
 
   saveArticle = event => {
     let article = {
       title: event.target.title,
       date: event.target.date,
       url: event.target.url
-    }
-    console.log(article)
-
-    // let id = event.target.id
-
+    };
+    console.log(article);
     API.saveArticle(article)
-       .then(res => {if(res){
-         console.log('Article Saved!')
-       }})
-       .catch(err => console.log('ERROR ', err))
-    
-
-  }
+      .then(res => {
+        if (res) {
+          console.log('Article saved!');
+        }
+      })
+      .catch(err => console.log('ERROR ', err));
+  };
 
   deleteArticle = event => {
-    let id = event.target.id
+    let id = event.target.id;
     API.deleteArticle(id)
-      .then(res => console.log('RES ', res))
+      .then(res => {
+        if (res) {
+          console.log('Article deleted!');
+        }
+      })
       .catch(err => console.log('ERROR ', err));
-  }
+  };
 
   render() {
     return (
@@ -77,10 +78,10 @@ class Main extends Component {
           startAction={this.handleInputChange.bind()}
           topicAction={this.handleInputChange.bind()}
         />
-        <ArticleContainer 
-        results={this.state.results}
-        saveArticle={this.saveArticle.bind()}
-        deleteArticle={this.deleteArticle.bind()}
+        <ArticleContainer
+          results={this.state.results}
+          saveArticle={this.saveArticle.bind()}
+          deleteArticle={this.deleteArticle.bind()}
         />
         <Footer />
       </div>

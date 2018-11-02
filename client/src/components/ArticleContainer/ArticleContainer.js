@@ -1,13 +1,11 @@
 import React from 'react';
 
 const ArticleContainer = props => {
-  console.log(props.results);
   return props.results.map(result => (
     <div key={result._id}>
-      <h4 href={result.web_url}>{result.headline.main}</h4>
+      <a href={result.web_url}><h3>{result.headline.main}</h3></a>
       <p>{result.snippet}</p>
       <p>{result.pub_date}</p>
-      <p>{result.web_url}</p>
       <button
         id={result._id}
         title={result.headline.main}
